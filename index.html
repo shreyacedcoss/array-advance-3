@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="p1"></p>
+    <button onclick="disp();">show</button>
+  </body>
+  <script>
+    class employ {
+        id;
+        name;
+        salary;
+      constructor(id, name, salary) {
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+      }
+    }
+    var john = new employ(1, "john", 8000);
+    const obj = JSON.stringify(john);
+    function disp() {
+      var src =
+        "<table border=1><tr><th>ID</th><th>Name</th><th>Salary</th></tr>";
+      document.getElementById("p1").innerHTML = src;
+      
+      src +=
+        "<tr><td id='tds'>" +
+        john.id +
+        "</td><td>" +
+        john.name +
+        "</td> <td >" +
+        john.salary;
+      "</td></tr></table>";
+      document.getElementById("p1").innerHTML = src;
+    }
+    disp();
+  </script>
+</html>
